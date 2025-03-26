@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magisterium Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Magisterium Chat</h1>
+    </header>
+    
+    <div class="chat-container">
+      <div class="chat-messages" id="chat-messages">
+        <div class="message system">
+          Chào mừng đến với Magisterium Chat! Hãy đặt câu hỏi của bạn.
+        </div>
+      </div>
+      
+      <div class="input-area">
+        <textarea id="user-input" placeholder="Nhập câu hỏi của bạn..." rows="3"></textarea>
+        <button id="send-button">Gửi</button>
+      </div>
+    </div>
+    
+    <div class="sidebar">
+      <div class="panel citations-panel">
+        <h3>Citations</h3>
+        <div id="citations-container">
+          <p class="empty-state">Các trích dẫn sẽ xuất hiện ở đây.</p>
+        </div>
+      </div>
+      
+      <div class="panel related-panel">
+        <h3>Related Questions</h3>
+        <div id="related-questions-container">
+          <p class="empty-state">Các câu hỏi liên quan sẽ xuất hiện ở đây.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
