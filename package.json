@@ -1,15 +1,18 @@
 {
-  "name": "railway-hello-world",
+  "name": "magisterium-chat",
   "version": "1.0.0",
-  "description": "Simple Hello World app for Railway",
+  "description": "Chat interface for Magisterium API",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "body-parser": "^1.20.2"
+  },
   "engines": {
     "node": "16.x"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
   }
 }
