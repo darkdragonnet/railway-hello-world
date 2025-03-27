@@ -42,42 +42,48 @@
     </div>
   </div>
   
-  <!-- Thêm vào cuối phần body trong index.html -->
+  <!-- For testing JavaScript functionality -->
   <button id="test-button" style="position: fixed; bottom: 10px; left: 10px;">Test JS</button>
   
+  <!-- Initialize key variables and add event listeners -->
   <script>
-    // Log when the script is loaded
-    console.log('🛠️ Script loaded: Setting up event listeners');
-
-    // Event listener for send button
-    document.getElementById('send-button').addEventListener('click', function() {
-      console.log('🚀 Send button clicked');
-      const userInput = document.getElementById('user-input').value;
-      console.log('📝 User input:', userInput);
+    // Initialize conversation history
+    let conversationHistory = [];
+    
+    // Log when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM fully loaded and parsed');
       
-      if (userInput.trim()) {
-        console.log('✅ Valid input detected, proceeding to send message...');
-        // Call function to send the message (assumed to be defined elsewhere)
-        // sendMessage(userInput);
+      // Test button functionality
+      document.getElementById('test-button').addEventListener('click', function() {
+        alert('JavaScript đang hoạt động!');
+        console.log('Test button clicked - JS is working');
+      });
+      
+      // Add event listener to send button
+      const sendButton = document.getElementById('send-button');
+      if (sendButton) {
+        sendButton.addEventListener('click', sendMessage);
+        console.log('Send button event listener added');
       } else {
-        console.warn('⚠️ Empty message detected, cannot send.');
+        console.error('Send button not found in DOM');
+      }
+      
+      // Add event listener for Enter key in textarea
+      const userInput = document.getElementById('user-input');
+      if (userInput) {
+        userInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+        console.log('User input event listener added');
       }
     });
-
-    // Event listener for test button
-    document.getElementById('test-button').addEventListener('click', function() {
-      alert('JavaScript đang hoạt động!');
-      console.log('🔍 Test button clicked: JavaScript is operational!');
-    });
-    
-    // Log DOM content check
-    console.log('🧪 DOM Elements:', {
-      sendButton: document.getElementById('send-button'),
-      userInput: document.getElementById('user-input'),
-      chatMessages: document.getElementById('chat-messages'),
-      citationsContainer: document.getElementById('citations-container'),
-      relatedQuestionsContainer: document.getElementById('related-questions-container')
-    });
   </script>
+  
+  <!-- Include the main script file with sendMessage function -->
+  <script src="script.js"></script>
 </body>
 </html>
