@@ -1,5 +1,8 @@
 // Thay đổi hàm sendMessage trong script.js
 async function sendMessage() {
+  // Trong script.js, thêm dòng này vào đầu hàm sendMessage()
+  console.log('Send button clicked');
+  
   const userMessage = userInput.value.trim();
   if (!userMessage) return;
   
