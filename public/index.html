@@ -42,12 +42,42 @@
     </div>
   </div>
   
-<!-- Thêm vào cuối phần body trong index.html -->
-<button id="test-button" style="position: fixed; bottom: 10px; left: 10px;">Test JS</button>
-<script>
-  document.getElementById('test-button').addEventListener('click', function() {
-    alert('JavaScript đang hoạt động!');
-  });
-</script>
+  <!-- Thêm vào cuối phần body trong index.html -->
+  <button id="test-button" style="position: fixed; bottom: 10px; left: 10px;">Test JS</button>
+  
+  <script>
+    // Log when the script is loaded
+    console.log('🛠️ Script loaded: Setting up event listeners');
+
+    // Event listener for send button
+    document.getElementById('send-button').addEventListener('click', function() {
+      console.log('🚀 Send button clicked');
+      const userInput = document.getElementById('user-input').value;
+      console.log('📝 User input:', userInput);
+      
+      if (userInput.trim()) {
+        console.log('✅ Valid input detected, proceeding to send message...');
+        // Call function to send the message (assumed to be defined elsewhere)
+        // sendMessage(userInput);
+      } else {
+        console.warn('⚠️ Empty message detected, cannot send.');
+      }
+    });
+
+    // Event listener for test button
+    document.getElementById('test-button').addEventListener('click', function() {
+      alert('JavaScript đang hoạt động!');
+      console.log('🔍 Test button clicked: JavaScript is operational!');
+    });
+    
+    // Log DOM content check
+    console.log('🧪 DOM Elements:', {
+      sendButton: document.getElementById('send-button'),
+      userInput: document.getElementById('user-input'),
+      chatMessages: document.getElementById('chat-messages'),
+      citationsContainer: document.getElementById('citations-container'),
+      relatedQuestionsContainer: document.getElementById('related-questions-container')
+    });
+  </script>
 </body>
 </html>
