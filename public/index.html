@@ -42,6 +42,12 @@
     </div>
   </div>
   
-  <script src="script.js"></script>
+<!-- Thêm vào cuối phần body trong index.html -->
+<button id="test-button" style="position: fixed; bottom: 10px; left: 10px;">Test JS</button>
+<script>
+  document.getElementById('test-button').addEventListener('click', function() {
+    alert('JavaScript đang hoạt động!');
+  });
+</script>
 </body>
 </html>
